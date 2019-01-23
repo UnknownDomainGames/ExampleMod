@@ -4,11 +4,12 @@ import org.slf4j.Logger;
 import unknowndomain.engine.event.Listener;
 import unknowndomain.engine.event.game.GameReadyEvent;
 import unknowndomain.engine.mod.Mod;
+import unknowndomain.engine.mod.inject.Log;
 
 @Mod("examplemod:1.0.0")
 public class ExampleMod {
 
-    @unknowndomain.engine.mod.inject.Logger
+    @Log
     public static Logger logger;
 
     @Listener
