@@ -1,20 +1,28 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
-group 'com.github.mouse0w0'
+group 'com.github.unknowndomaingame'
 version '1.0.0'
 
-sourceCompatibility = 1.8
+sourceCompatibility = targetCompatibility = 11
+
+mainClassName = 'unknowndomain.engine.client.UnknownDomain'
 
 repositories {
+    mavenLocal()
+    maven {
+        url 'https://jitpack.io'
+    }
+    jcenter()
     mavenCentral()
 }
 
 dependencies {
-    annotationProcessor fileTree("libs")
-    
-    compile fileTree("libs")
-    
-    testCompile 'junit:junit:4.12'
+    compile 'com.github.unknowndomaingame:EngineAPI:1.0.0'
+    runtimeOnly 'com.github.unknowndomaingame:EngineClient:1.0.0'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.4.1'
 }
