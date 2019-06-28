@@ -8,7 +8,7 @@ version '1.0.0'
 
 sourceCompatibility = targetCompatibility = 11
 
-mainClassName = 'unknowndomain.engine.client.UnknownDomain'
+mainClassName = 'nullengine.client.launch.Bootstrap'
 
 repositories {
     mavenLocal()

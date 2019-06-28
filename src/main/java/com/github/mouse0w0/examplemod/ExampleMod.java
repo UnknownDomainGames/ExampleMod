@@ -1,14 +1,19 @@
 package com.github.mouse0w0.examplemod;
 
-import unknowndomain.engine.event.Listener;
-import unknowndomain.engine.event.game.GameEvent;
-import unknowndomain.engine.mod.Mod;
+import com.google.inject.Inject;
+import nullengine.event.Listener;
+import nullengine.event.mod.ModLifecycleEvent;
+import nullengine.mod.annotation.Mod;
+import org.slf4j.Logger;
 
-@Mod("examplemod:1.0.0")
+@Mod(id = "examplemod", version = "1.0.0", name = "Example Mod")
 public class ExampleMod {
 
+    @Inject
+    public static Logger logger;
+
     @Listener
-    public void onReady(GameEvent.Ready event) {
-        System.out.println("Hello UDEngine");
+    public void onInit(ModLifecycleEvent.Initialization event) {
+        logger.info("Hello World!");
     }
 }
