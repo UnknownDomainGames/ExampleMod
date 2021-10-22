@@ -1,12 +1,12 @@
 package com.github.mouse0w0.examplemod;
 
 import com.google.inject.Inject;
-import nullengine.event.Listener;
-import nullengine.event.mod.ModLifecycleEvent;
-import nullengine.mod.annotation.Mod;
+import engine.event.Listener;
+import engine.event.mod.ModLifecycleEvent;
+import engine.mod.annotation.Mod;
 import org.slf4j.Logger;
 
-@Mod(id = "examplemod", version = "1.0.0", name = "Example Mod")
+@Mod(id = "examplemod", name = "Example Mod")
 public class ExampleMod {
 
     @Inject

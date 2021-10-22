@@ -1,28 +1,22 @@
-plugins {
-    id 'java'
-    id 'application'
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url 'https://jitpack.io' }
+        gradlePluginPortal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.github.UnknownDomainGames:GradlePlugin:1.0'
+    }
 }
+apply plugin: 'pangu-gradle'
 
 group 'com.github.unknowndomaingame'
 version '1.0.0'
 
-sourceCompatibility = targetCompatibility = 11
-
-mainClassName = 'nullengine.client.launch.Bootstrap'
-
-repositories {
-    mavenLocal()
-    maven {
-        url 'https://jitpack.io'
-    }
-    jcenter()
-    mavenCentral()
+dependencies {
 }
 
-dependencies {
-    compileOnly 'com.github.unknowndomaingame:EngineAPI:0.1.0-alpha'
-    runtimeOnly 'com.github.unknowndomaingame:EngineClient:0.1.0-alpha'
-
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.4.1'
+engine {
+    version 'f79286a53a'
 }
