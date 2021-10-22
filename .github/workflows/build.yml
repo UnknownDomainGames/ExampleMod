@@ -1,0 +1,42 @@
+name: Build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  release:
+    types:
+      - created
+
+jobs:
+  build:
+    name: Build
+    strategy:
+      fail-fast: false
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Java
+        uses: actions/setup-java@v2.3.1
+        with:
+          java-version: 11
+          distribution: adopt
+          cache: gradle
+
+      - name: Build with Gradle
+        run: |
+          chmod +x ./gradlew
+          ./gradlew build
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          path: build/libs/*.jar
+
+      - name: Upload Release
+        uses: fnkr/github-action-ghr@v1
+        if: github.event_name == 'release'
+        env:
+          GHR_PATH: build/libs/
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
