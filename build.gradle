@@ -6,7 +6,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.github.UnknownDomainGames:GradlePlugin:1.0'
+        classpath 'com.github.UnknownDomainGames:GradlePlugin:1.1'
     }
 }
 apply plugin: 'pangu-gradle'
@@ -18,5 +18,5 @@ dependencies {
 }
 
 engine {
-    version 'f79286a53a'
+    version 'a4894897a2'
 }
