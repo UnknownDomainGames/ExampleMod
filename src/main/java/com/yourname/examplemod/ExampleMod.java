@@ -1,4 +1,4 @@
-package com.github.mouse0w0.examplemod;
+package com.yourname.examplemod;
 
 import com.google.inject.Inject;
 import engine.event.Listener;
