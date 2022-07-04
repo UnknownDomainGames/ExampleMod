@@ -11,7 +11,7 @@ buildscript {
 }
 apply plugin: 'pangu-gradle'
 
-group 'com.github.unknowndomaingame'
+group 'com.yourname.examplemod'
 version '1.0.0'
 
 dependencies {
